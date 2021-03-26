@@ -30,6 +30,9 @@ sudo gem install cocoapods
 #### Link & run the app (iOS):
 ```
 react-native link
+react-native link @react-native-community/art
+react-native link react-native-vector-icons
+
 npm install
 cd ios
 pod install

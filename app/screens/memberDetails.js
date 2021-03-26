@@ -84,7 +84,7 @@ class MemberDetailsScreen extends React.Component {
             <Text style={[s.bigFont, s.blackFont, s.bold, s.center, s.tinyMarginBottom]}>{this.state.name}</Text>
             <Text style={[s.blackFont, s.center, s.tinyMarginBottom]}>{this.state.email}</Text>
             <View style={[s.scoreArea]}>
-              <Text style={[s.hugeFont, s.bold, s.center, s.marginTop, this.state.color]}>{this.state.score != null ? this.state.score : '--'}</Text>
+    <Text style={[s.hugeFont, s.bold, s.center, s.marginTop, this.state.color]}>{this.state.score != null ? `${this.state.score}%` : '--'}</Text>
               <Text style={[s.bigFont, s.blackFont, s.center, s.tinyMarginBottom]}>{this.state.score != null ? "Current Score": "Score is not avaiable"}</Text>
             </View> 
           </View> 
