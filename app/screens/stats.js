@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import {TouchableOpacity, Alert, Text, View, TextInput, ScrollView, Dimensions, Linking, StatusBar, InputAccessoryView, Button, AppState, Image, Platform, BackHandler} from 'react-native';
 import Icon from 'react-native-vector-icons/dist/FontAwesome';
 import iconFont from 'react-native-vector-icons/Fonts/FontAwesome.ttf';
+import memberService from '../services/memberService';
 
 var s = require('../styles/global');
 var ls = require('../styles/statsStyles');
@@ -36,12 +37,23 @@ class StatsScreen extends React.Component {
   };
 
   componentDidMount() {
-
     this.getStatsData();
   }
 
   getStatsData = () => {
+    let members = memberService.getAllMembers();
+    this.setState({averageScore: this.getAverageScore(members), totalMembers: members.length});
+  }
 
+  getAverageScore = (members) =>{
+    let scoreTotal = 0;
+    for (const iterator in members) {
+      let currentScore = members[iterator]['score'];
+      if(currentScore != null){
+        scoreTotal+= currentScore;
+      }
+    }
+    return scoreTotal/ members.length;
   }
 
   render() {

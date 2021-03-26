@@ -29,8 +29,6 @@ class MembersScreen extends React.Component {
       disable: false,
     };
 
-    this.retrievePlayersFromDB = this.retrievePlayersFromDB.bind(this);
-
   }
 
   static navigationOptions = ({ navigation }) => {
@@ -40,7 +38,7 @@ class MembersScreen extends React.Component {
         backgroundColor: 'white',
         borderBottomWidth: 0,
         marginTop: 20,
-        marginRight: 10,
+        marginRight: 15,
         elevation: 0
       },
       headerRight: (
@@ -58,21 +56,14 @@ class MembersScreen extends React.Component {
   componentDidMount() {
     const {navigation} = this.props;
     this.props.navigation.setParams({ addMember: this.openAddMember});
-    navigation.addListener ('willFocus', () => {
-      this.retrievePlayersFromDB();
-
-    });
+    this.retrieveMembersFromDB();
 
     navigation.addListener ('didFocus', () => {
       this.setState({disable: false});
-
-      if (this.props.navigation.state.params && this.props.navigation.state.params.openAddModal) {
-        this.openAddMember();
-      }
     });
   }
 
-  retrievePlayersFromDB() {
+  retrieveMembersFromDB = () =>{
     this.setState({members: memberService.getAllMembers()});
   }
 
@@ -289,7 +280,7 @@ class AddMembersModal extends React.Component {
                 </View>
               </TouchableOpacity>
               <Text style={s.modalTitle}>{"Add new members"}</Text>
-              <Text style={s.modalContent}>{"Type in the members information"}</Text>
+              <Text style={s.modalContent}>{"Type in the member's information"}</Text>
               {playerInputs}
               <View style={s.paddingBig}>
                 <SmartButton buttonText={"Add Members"} color={'yellow'} nextArrow={false} clickFunction={this.insertNewMembers} canProceed={this.hasAtLeastOneMember} />

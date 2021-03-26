@@ -23,9 +23,9 @@ class MemberDetailsScreen extends React.Component {
     super(props);
 
     this.state = {
-      name: '',
-      email: '',
-      score: 0,
+      name: null,
+      email: null,
+      score: null,
       color: 'black',
     };
 
@@ -52,7 +52,6 @@ class MemberDetailsScreen extends React.Component {
 
   setupPlayer = () => {
     let clickedMember = this.props.navigation.state.params;
-    console.log(clickedMember);
     let color = this.setColorAccordingToScore(clickedMember['score']);
     this.setState({name: clickedMember['name'], email: clickedMember['email'], score: clickedMember['score'], color: color});
   }
@@ -61,7 +60,7 @@ class MemberDetailsScreen extends React.Component {
     if(score <= 60){
       return s.redFont;
     }
-    else if(score > 60 && score <= 80){
+    else if(score > 60 && score <= 80 || score == null){
       return  s.grayFont;
     }
     else{
@@ -85,8 +84,8 @@ class MemberDetailsScreen extends React.Component {
             <Text style={[s.bigFont, s.blackFont, s.bold, s.center, s.tinyMarginBottom]}>{this.state.name}</Text>
             <Text style={[s.blackFont, s.center, s.tinyMarginBottom]}>{this.state.email}</Text>
             <View style={[s.scoreArea]}>
-              <Text style={[s.hugeFont, s.bold, s.center, s.marginTop, this.state.color]}>{this.state.score}</Text>
-              <Text style={[s.bigFont, s.blackFont, s.center, s.tinyMarginBottom]}>{"Current Score"}</Text>
+              <Text style={[s.hugeFont, s.bold, s.center, s.marginTop, this.state.color]}>{this.state.score != null ? this.state.score : '--'}</Text>
+              <Text style={[s.bigFont, s.blackFont, s.center, s.tinyMarginBottom]}>{this.state.score != null ? "Current Score": "Score is not avaiable"}</Text>
             </View> 
           </View> 
       </View>
