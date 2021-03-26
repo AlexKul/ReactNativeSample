@@ -1,4 +1,5 @@
 # ReactNativeSample
+This mobile app was created to demonstrate my front-end software development skills using React Native and JavaScript.
 
 ## How to Install and run this app (MacOS)
 
