@@ -1,0 +1,6 @@
+module Pods_manageApp_manageAppTests {
+  umbrella header "Pods-manageApp-manageAppTests-umbrella.h"
+
+  export *
+  module * { export * }
+}
