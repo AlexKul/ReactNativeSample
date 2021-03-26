@@ -4,8 +4,7 @@ var React = require('react-native');
 
 var {
   StyleSheet,
-  Dimensions,
-  Platform
+  Dimensions
 } = React;
 
 

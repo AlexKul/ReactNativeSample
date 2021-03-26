@@ -9,7 +9,6 @@ import {MemberDetailsScreen} from './app/screens/memberDetails';
 import {MoreScreen} from './app/screens/more';
 import {StatsScreen} from './app/screens/stats';
 import Icon from 'react-native-vector-icons/dist/FontAwesome';
-import iconFont from 'react-native-vector-icons/Fonts/FontAwesome.ttf';
 
 var s = require('./app/styles/global');
 

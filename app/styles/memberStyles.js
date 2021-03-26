@@ -4,16 +4,12 @@ var React = require('react-native');
 
 var {
   StyleSheet,
-  Dimensions,
-  NativeModules,
-  Platform
+  Dimensions
 } = React;
 
-
 var smallScreen = Dimensions.get('window').width <= 350 ? true : false;
-
 var ipadScreen = Dimensions.get('window').width >= 600 ? true : false;
-// console.log(Dimensions.get('window').width - Dimensions.get('window').width  * 0.12);
+
 module.exports = StyleSheet.create({
   membersList:{
     paddingTop: ipadScreen? 40 : 20,

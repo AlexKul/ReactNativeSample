@@ -1,8 +1,5 @@
 
 class MemberDataService {
-
-
-
   getAllMembers() {
     return [{'id': 1, 'name': 'Alex', 'email': 'alex.kulakevich@gmail.com', 'score': 93,}, 
     {'id': 2, 'name': 'Jason', 'email': 'jason.borne@gmail.com', 'score': 64}, 

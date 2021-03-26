@@ -4,12 +4,9 @@ var React = require('react-native');
 
 var {
   StyleSheet,
-  Dimensions,
-  NativeModules,
-  Platform
+  Dimensions
 } = React;
 
-var smallScreen = Dimensions.get('window').width <= 350 ? true : false;
 var ipadScreen = Dimensions.get('window').width >= 600 ? true : false;
 
 module.exports = StyleSheet.create({

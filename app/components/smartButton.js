@@ -1,20 +1,16 @@
-import React, {Component} from 'react';
-
-import {TouchableOpacity, Alert, Platform, Button, StyleSheet, Text, View, Image} from 'react-native';
+import React from 'react';
+import {TouchableOpacity, Text, View} from 'react-native';
 
 
 var s = require('../styles/global');
-
 
 class SmartButton extends React.Component {
 
   constructor(props) {
     super(props);
-
-    this.canProceed = this.canProceed.bind(this);
   }
 
-  canProceed() {
+  canProceed = () => {
     return !this.props.canProceed || this.props.canProceed();
   }
 
